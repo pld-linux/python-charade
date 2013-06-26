@@ -67,8 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 	--skip-build \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
-%py_ocomp $RPM_BUILD_ROOT%%{py_sitescriptdir}
-%py_comp $RPM_BUILD_ROOT%%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
 %endif
 
