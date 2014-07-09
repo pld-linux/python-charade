@@ -7,7 +7,7 @@ Summary:	The Universal character encoding detector
 Name:		python-%{module}
 Version:	1.0.3
 Release:	1
-License:	LGPL 2.1+
+License:	LGPL v2.1+
 Group:		Development/Languages/Python
 Source0:	https://pypi.python.org/packages/source/c/charade/%{module}-%{version}.tar.gz
 # Source0-md5:	79ac701a147705c09bdce31b79dfa12e
