@@ -3,12 +3,12 @@
 %bcond_without	python2	# build CPython 2.x module
 %bcond_without	python3	# build CPython 3.x module
 #
-%define 	module	charade
+%define		module	charade
 Summary:	Charade - The Universal character encoding detector for Python
 Summary(pl.UTF-8):	Charade - uniwersalny moduł Pythona wykrywający kodowanie znaków
 Name:		python-%{module}
 Version:	1.0.3
-Release:	4
+Release:	5
 License:	LGPL v2.1+
 Group:		Development/Languages/Python
 Source0:	https://pypi.python.org/packages/source/c/charade/%{module}-%{version}.tar.gz
@@ -67,34 +67,24 @@ Ten pakiet zawiera moduł zbudowany dla Pythona 3.x.
 
 %build
 %if %{with python2}
-%py_build -b py2
+%py_build
 %endif
 
 %if %{with python3}
-%py3_build -b py3
+%py3_build
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with python3}
-%{__python3} setup.py \
-	build -b py3 \
-	install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py3_install
 
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/charade{,3}
 %endif
 
 %if %{with python2}
-%{__python} setup.py \
-	build -b py2 \
-	install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
