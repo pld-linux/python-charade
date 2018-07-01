@@ -8,7 +8,7 @@ Summary:	Charade - The Universal character encoding detector for Python
 Summary(pl.UTF-8):	Charade - uniwersalny moduł Pythona wykrywający kodowanie znaków
 Name:		python-%{module}
 Version:	1.0.3
-Release:	6
+Release:	7
 License:	LGPL v2.1+
 Group:		Development/Languages/Python
 Source0:	https://pypi.python.org/packages/source/c/charade/%{module}-%{version}.tar.gz
